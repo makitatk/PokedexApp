@@ -10,14 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PokedexApp">
-        <activity android:name=".PokedexActivity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PokemonDetailActivity" />
-    </application>
 
+        <activity android:name=".PokedexActivity" />
+        <activity android:name=".PokemonDetailActivity" />
+        <activity android:name=".LoginActivity" />
+    </application>
 </manifest>
