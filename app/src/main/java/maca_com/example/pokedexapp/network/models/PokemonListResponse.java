@@ -7,6 +7,18 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class PokemonListResponse {
+
+    private int count;
+    private String next;
+    private String previous;
+    @SerializedName("results")
+    private List<Pokemon>pokemonList;
+
+    public Sprite getSprites() {
+        return sprites;
+    }
+
+    private  Sprite sprites;
     public int getCount() {
         return count;
     }
@@ -39,17 +51,7 @@ public class PokemonListResponse {
         this.pokemonList = pokemonList;
     }
 
-    private int count;
-    private String next;
-    private String previous;
-    @SerializedName("results")
-    private List<Pokemon>pokemonList;
 
-    public Sprite getSprites() {
-        return sprites;
-    }
-
-    private  Sprite sprites;
 
 
 }

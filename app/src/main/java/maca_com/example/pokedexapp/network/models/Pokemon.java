@@ -26,5 +26,10 @@ public class Pokemon {
     }
 
     private Sprite sprite;
+    private int number;
 
+    public int getNumber() {
+        String[] urlPartes = url.split("/");
+        return Integer.parseInt(urlPartes[urlPartes.length - 1]);
+    }
 }

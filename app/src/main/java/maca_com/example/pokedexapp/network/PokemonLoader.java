@@ -2,6 +2,7 @@ package maca_com.example.pokedexapp.network;
 
 import maca_com.example.pokedexapp.network.models.PokemonByIdResponse;
 import maca_com.example.pokedexapp.network.models.PokemonListResponse;
+import maca_com.example.pokedexapp.network.models.PokemonRespuesta;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -31,8 +32,8 @@ public class PokemonLoader implements PokemonApi {
     }
 
     @Override
-    public Call<PokemonListResponse> obtenerListaPokemon(String limit, String offset) {
-        return pokemonApi.getPokemonList();
+    public Call<PokemonRespuesta> obtenerListaPokemon(int limit, int offset) {
+        return pokemonApi.obtenerListaPokemon(limit, offset);
     }
 
 }

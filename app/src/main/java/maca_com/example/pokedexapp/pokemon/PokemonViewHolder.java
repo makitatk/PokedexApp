@@ -18,6 +18,7 @@ public class PokemonViewHolder extends RecyclerView.ViewHolder {
         super(v);
         tvPokemonNombre = v.findViewById(R.id.tvPokemonName);
         lnPokemon = v.findViewById(R.id.lnPokemon);
+        ivPokemon =v.findViewById(R.id.ivPokemonFoto);
 
     }
 }
