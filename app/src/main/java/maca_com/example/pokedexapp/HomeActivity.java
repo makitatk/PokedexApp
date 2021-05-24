@@ -39,9 +39,9 @@ public class HomeActivity extends BaseActivity {
                 else{
                     if (pass.equals(repass)){
                         Boolean checkuser = DB.checkUsername(user);
-                        if (checkuser==false){
+                        if (!checkuser){
                             Boolean insert = DB.insertData(user,pass);
-                            if (insert==true){
+                            if (insert){
                                 Toast.makeText(HomeActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
                                 startActivity(intent);

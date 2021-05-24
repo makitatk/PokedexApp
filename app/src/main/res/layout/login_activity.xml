@@ -8,19 +8,19 @@
     tools:context=".LoginActivity">
 
     <EditText
-        android:id="@+id/username1"
+        android:id="@+id/txtusername1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
         android:layout_marginTop="50dp"/>
 
     <EditText
-        android:id="@+id/password1"
+        android:id="@+id/txtpassword1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Passwpord"
+        android:hint="Password"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/username1"/>
+        android:layout_below="@+id/txtusername1"/>
 
 
     <Button
@@ -29,6 +29,6 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/password1"/>
+        android:layout_below="@+id/txtpassword1"/>
 
 </RelativeLayout>

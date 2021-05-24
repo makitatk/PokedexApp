@@ -11,32 +11,35 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText username,password;
+    EditText username1,password1;
     Button btnlogin;
     DBHelper DB;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        username = (EditText) findViewById(R.id.username1);
-        password = (EditText) findViewById(R.id.password1);
+        username1 = (EditText) findViewById(R.id.txtusername1);
+        password1 = (EditText) findViewById(R.id.txtpassword1);
 
         btnlogin = (Button) findViewById(R.id.btnlogin);
+        DB = new DBHelper(this);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
+                String user = username1.getText().toString();
+                String pass = password1.getText().toString();
 
                 if (user.equals("") || pass.equals("")) {
                     Toast.makeText(LoginActivity.this, "Completa los campos", Toast.LENGTH_SHORT).show();
                 }
-                else{
-                    Boolean checkuserpass = DB.checkUsernamePassword(user,pass);
-                    if (checkuserpass == true) {
+                else
+                {
+                    Boolean check = DB.checkUsernamePassword(user,pass);
+                    if (check) {
                         Toast.makeText(LoginActivity.this, "Iniciando sesion", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), PokedexActivity.class);
                         startActivity(intent);
