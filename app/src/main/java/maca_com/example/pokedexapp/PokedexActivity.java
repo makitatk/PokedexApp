@@ -6,9 +6,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -127,5 +131,31 @@ public class PokedexActivity extends BaseActivity {
                 Log.e(Constans.DEBUG_POKEMON, " onFailure: " + t.getMessage());
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id=item.getItemId();
+        switch (id){
+            case R.id.menu_usuarios:
+                Toast.makeText(this,"Mostrando usuario",Toast.LENGTH_SHORT).show();
+                Intent intent= new Intent(this, UserActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_cerrarsesion:
+                Intent intent2= new Intent(this,HomeActivity.class);
+                startActivity(intent2);
+
+            default:
+                break;
+
+        }
+        return  super.onOptionsItemSelected(item);
     }
 }

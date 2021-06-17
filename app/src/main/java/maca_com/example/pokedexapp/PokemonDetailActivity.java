@@ -2,9 +2,12 @@ package maca_com.example.pokedexapp;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -43,6 +46,7 @@ public class PokemonDetailActivity extends BaseActivity {
         ivPokemonSprite = findViewById(R.id.ivPokemonSprite);
         rvPokeGames = findViewById(R.id.rvPokeGames);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String pokemonId= getIntent().getStringExtra(Constans.EXTRA_POKEMON_ID);
 
@@ -85,6 +89,30 @@ public class PokemonDetailActivity extends BaseActivity {
                 hideProgress();
                 Log.e(Constans.DEBUG_POKEMON,t.getMessage());
             }
+
+
+
+
         });
+
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int id=item.getItemId();
+        switch (id) {
+            case android.R.id.home:
+                finish();
+             default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
